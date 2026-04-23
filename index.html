@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultura de Tamós</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #eef2f7;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.8em;
+  margin: 0;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* NAV */
+nav {
+  margin-top: 20px;
+}
+
+nav button {
+  background: white;
+  border: none;
+  margin: 5px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #3498db;
+  color: white;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* SECCIONES */
+section {
+  display: none;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+section.active {
+  display: block;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+section p {
+  font-size: 1.1em;
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width: 700px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  section {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cultura de Tamós</h1>
+  <p>Conoce la historia y tradiciones de nuestra comunidad</p>
+
+  <nav>
+    <button onclick="mostrarSeccion('sobre')">Sobre Tamós</button>
+    <button onclick="mostrarSeccion('cultura')">Cultura</button>
+    <button onclick="mostrarSeccion('tradiciones')">Tradiciones</button>
+  </nav>
+</header>
+
+<div class="contenedor">
+
+<section id="sobre" class="active">
+<h2>Sobre Tamós</h2>
+
+<p>Tamós es una comunidad con 300 a 400 años de historia, aunque no se conoce una fecha exacta de su fundación. En sus inicios contaba con pocas casas, rodeado de monte y sin servicios básicos como luz eléctrica, agua potable o drenaje.</p>
+
+<p>Las personas tenían luz únicamente de velas y caminaban por veredas donde hoy existe una plaza. Para conseguir agua debían ir a lugares lejanos como la carretera o un lugar llamado "el rastro".</p>
+
+<p>El transporte era muy limitado; existían dos líneas que venían de Pánuco, conocidas como "las cotorras" y "el correo", junto con otras paradas importantes como "la parada de la abuela", llamada así porque mujeres mayores viajaban diariamente a vender productos a la ciudad de Tampico, Tamaulipas.</p>
+
+<p>Con el paso del tiempo, Tamós fue cambiando: llegaron servicios básicos como agua potable y electricidad, se construyeron carreteras y puentes, y mejoraron los medios de transporte. Gracias a todo este proceso, Tamós es un lugar mejor comunicado y con mayores comodidades.</p>
+</section>
+
+<section id="cultura">
+<h2>Cultura</h2>
+
+<p>La cultura de Tamós forma parte del amplio mosaico cultural de la región huasteca veracruzana. Se caracteriza por una combinación de tradiciones indígenas, influencias coloniales y prácticas contemporáneas.</p>
+
+<p>Uno de los elementos más representativos es la música tradicional, especialmente el son jarocho, que se interpreta en reuniones comunitarias conocidas como fandangos, donde se combinan música, canto y danza.</p>
+
+<p>En cuanto a festividades, destacan celebraciones religiosas como la Semana Santa y el día de la Virgen de Guadalupe, donde se combinan elementos religiosos y culturales.</p>
+
+<p>La vida comunitaria es fundamental, ya que las personas se apoyan mutuamente y mantienen vivas las tradiciones.</p>
+</section>
+
+<section id="tradiciones">
+<h2>Tradiciones</h2>
+
+<p>Entre las tradiciones destacan los bailes y cantos en reuniones comunitarias, donde se mezcla música, improvisación y convivencia.</p>
+
+<p>Los festivales religiosos son parte central de la comunidad, fortaleciendo la unión social y transmitiendo valores de generación en generación.</p>
+
+<p>La gastronomía también es clave, con platillos como tamales y mariscos preparados con recetas tradicionales que reflejan la identidad local.</p>
+
+<p>Estas tradiciones representan un equilibrio entre cultura, historia y convivencia social.</p>
+</section>
+
+</div>
+
+<footer>
+  <p>© 2026 Comunidad Tamós - Todos los derechos reservados</p>
+</footer>
+
+<script>
+function mostrarSeccion(id) {
+  const secciones = document.querySelectorAll('section');
+
+  secciones.forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
